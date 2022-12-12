@@ -2,11 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { userDcument, userM } from './user.model';
+import { StudentDocument } from './student.model';
 
 @Injectable()
 export class UserService {
   constructor(
-    @InjectModel('userinfo') private readonly userModel: Model<userDcument>
+    // @InjectModel('userinfo') private readonly userModel: Model<userDcument>
+    @InjectModel('userinfo') private readonly userModel:  Model<StudentDocument>
   ) { }
 
   getAlluser() {
